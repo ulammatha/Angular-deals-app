@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="dealApp">
-    <head>
-        <title>Deals</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
+	<head>
+		<title>Deals</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="UTF-8">
 
-        <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-    </head>
-    <body>
-     <header>
+		<!-- load bootstrap and fontawesome via CDN -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<header>
 			<nav class="navbar navbar-default">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">AngularJS</a>
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/">AngularJS</a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#/vendorlist"><i class="fa fa-home"></i> Home</a></li>
+					</ul>
 				</div>
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#/vendorlist"><i class="fa fa-home"></i> Home</a></li>
-				</ul>
-			</div>
 			</nav>
 		</header>
-			<div class="container">
-				<div class="panel panel-default">
-					<div class="panel-heading text-center">Vendors</div>
-					<div class="panel-body btn-warning">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading text-center">Vendors</div>
+				<div class="panel-body btn-warning">
 					<div class="col-md-4">Email</div>
 					<div class="col-md-4">Full Name</div>
-					</div>
-					<div ng-controller="VendorCtrl">
-						<div ng-repeat="vendor in vendors">
+				</div>
+				<div ng-controller="VendorCtrl">
+					<div ng-repeat="vendor in vendors">
 						<div class="panel-body">
 							<div class="col-md-4">{{vendor.email}}</div>
 							<div class="col-md-4">{{vendor.full_name}}</div>
-						 	<hr>
-						</div>
+							<hr>
 						</div>
 					</div>
 				</div>
 			</div>
-				<!-- load angular via CDN -->
-        <script src="//code.angularjs.org/1.4.0-rc.1/angular.min.js"></script>
-        <script src="//code.angularjs.org/1.4.0-rc.1/angular-resource.min.js"></script>
-			  <script src="//code.angularjs.org/1.4.8/angular-route.min.js"></script>
-			  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-				<script src="//cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
-        <script src="app.js"></script>
-				<script src="vendor/vendor-ctrl.js"></script>
-    </body>
+		</div>
+			<!-- load angular via CDN -->
+			<script src="//code.angularjs.org/1.4.0-rc.1/angular.min.js"></script>
+			<script src="//code.angularjs.org/1.4.0-rc.1/angular-resource.min.js"></script>
+			<script src="//code.angularjs.org/1.4.8/angular-route.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+			<script src="//cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
+			<script src="app.js"></script>
+			<script src="vendor/vendor-ctrl.js"></script>
+	</body>
 </html>
