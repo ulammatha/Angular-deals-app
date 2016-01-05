@@ -7,6 +7,7 @@
 
 		<!-- load bootstrap and fontawesome via CDN -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header>
@@ -22,7 +23,7 @@
 			</nav>
 		</header>
 		<div class="container">
-			<div ng-controller="VendorCtrl">
+			<div ng-controller="VendorCtrl" ng-cloak>
 				<div class="panel panel-default">
 					<div class="panel-heading text-center">Vendors</div>
 					<div class="panel-body btn-warning">
@@ -42,7 +43,9 @@
 											 ng-show="editingData[vendor.email]">
 
 							</div>
-							<a href="" ng-click="edit(vendor.email)"><i class="fa fa-home"></i> edit</a>
+
+							<a href="" ng-click="edit(vendor.email)" ng-hide="editingData[vendor.email]"><i class="fa fa-home"></i> edit</a>
+							<a href="" ng-click="done(vendor.email)" ng-show="editingData[vendor.email]"><i class="fa fa-home"></i> done</a>
 							<hr>
 						</div>
 					</div>
