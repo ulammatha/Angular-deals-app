@@ -22,17 +22,27 @@
 			</nav>
 		</header>
 		<div class="container">
-			<div class="panel panel-default">
-				<div class="panel-heading text-center">Vendors</div>
-				<div class="panel-body btn-warning">
+			<div ng-controller="VendorCtrl">
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">Vendors</div>
+					<div class="panel-body btn-warning">
 					<div class="col-md-4">Email</div>
 					<div class="col-md-4">Full Name</div>
 				</div>
-				<div ng-controller="VendorCtrl">
 					<div ng-repeat="vendor in vendors">
 						<div class="panel-body">
-							<div class="col-md-4">{{vendor.email}}</div>
-							<div class="col-md-4">{{vendor.full_name}}</div>
+							<div class="col-md-4">
+								<div ng-hide="editingData[vendor.email]">{{vendor.email}}</div>
+								<input type="text" class="form-control" id= {{vendor.email}} ng-model= "vendor.email"
+											 ng-show="editingData[vendor.email]">
+							</div>
+							<div class="col-md-4">
+								<div ng-hide="editingData[vendor.email]">{{vendor.full_name}}</div>
+								<input type="text" class="form-control" id= {{vendor.full_name}} ng-model="vendor.full_name"
+											 ng-show="editingData[vendor.email]">
+
+							</div>
+							<a href="" ng-click="edit(vendor.email)"><i class="fa fa-home"></i> edit</a>
 							<hr>
 						</div>
 					</div>
